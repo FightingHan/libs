@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+.nav-tabs{
+			font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif';
+	color: aliceblue;
+	border:none;
+	background-attachment: fixed;
+	border-bottom-color:#99CCCC;
+	border-bottom: double;
+	font-weight:600;
+	font-size: 15px;
+		}
+.nav-tabs a{
+	height: 60px;
+}
+
+.logo{
+	color: rgba(0,0,0,1.00);
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+	font-weight:900;
+}
+
+.nav-tabs a:hover{
+}
+		.side{
+			height: 60px;
+			font-size: 20px;
+			text-align: center;
+		}
+		.list-group{
+			width: 150px;
+		}
+a{
+	
+	color: rgba(0,0,0,1.00);
+}
+a:hover{
+	text-decoration: none;
+	color:rgba(28,81,134,1.00);
+}
+
+.icon{
+	opacity: 0.8;
+}
+
+.icon:hover{
+	opacity: 1;
+}
+
+.side-bar{
+	font-weight:600;
+}
+
+
+ul>li>a:before{
+position: absolute;
+z-index: 1;
+left: 0px;
+bottom: 0px;
+display: inline-block;
+height: 3px;
+width: 100%;
+background-color: #ed6d00;
+content: "";
+transform: scale3d(0, 1, 1);
+transform-origin: left;
+transition: all 0.5s;
+} 
+ul>li:hover>a:before{
+transform: scale3d(1, 1, 1);
+color: #ed6d00;
+}
+
+
+
+
+

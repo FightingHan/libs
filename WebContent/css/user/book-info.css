@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+.tab-content.show{
+	display: block;
+}
+.tab-content.hidden{
+	display:none;
+}
+.selected{background-color:antiquewhite;
+}
+.usephoto{
+	border-radius: 100px;
+	width: 116px;
+	height: 116px;
+}
+h3{
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	font-size: 20px;
+}
+.box{
+	height: 200px;
+	border-style:ridge;
+	border-radius: 18px;
+	margin: 16px;
+	padding: 16px;
+	
+}
+.true{
+	color:#1FE700;
+}
+#book li {
+  float:left;
+  padding:2px 1em;
+  margin-right:0.5em;
+  margin-top: 5px;
+  background-color:antiquewhite;
+  color: black;
+  border-radius:1em;
+}
+#book ul {
+  margin: 0px;
+  list-style:none;
+  overflow:auto;
+}
+.modal-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 30%;
+    max-width: 700px;
+    max-height: 600px;
+    margin: 100px auto;
+    border-radius:10px;
+    background-color:#fff;
+    -webkit-animation: zoom 0.6s;
+    animation: zoom 0.6s;
+    resize: both;
+    overflow: auto;
+}
+@-webkit-keyframes zoom{
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+@keyframes zoom{
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}

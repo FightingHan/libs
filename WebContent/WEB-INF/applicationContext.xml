@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+        
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+         <property name="driverClassName" value="${jdbc.driver}"/>
+         <property name="url" value="${jdbc.url}"/>
+         <property name="username" value="${jdbc.username}"/>
+         <property name="password" value="${jdbc.password}"/>
+    </bean>
+    
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="login*" read-only="true" propagation="SUPPORTS"/>
+            <tx:method name="get*" read-only="true" propagation="SUPPORTS"/>
+            <tx:method name="load*" read-only="true" propagation="SUPPORTS" />
+            <tx:method name="list*" read-only="true" propagation="SUPPORTS" />
+            <tx:method name="*" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+    
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="serviceMethods" expression="execution(* cn.edu.swun.bnb.libs.service.impl.*.*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
+    </aop:config>
+    
+    
+    <!-- Service -->
+    <bean class="cn.edu.swun.bnb.libs.service.impl.BorrowServiceImpl" autowire="byType"/>
+    <bean class="cn.edu.swun.bnb.libs.service.impl.LoginServiceImpl" autowire="byType"/>
+    <bean class="cn.edu.swun.bnb.libs.service.impl.UserServiceImpl" autowire="byType"/>
+    <bean class="cn.edu.swun.bnb.libs.service.impl.StudentServiceImpl" autowire="byType"/>
+    <bean class="cn.edu.swun.bnb.libs.service.impl.InsServiceImpl" autowire="byType" />
+    <bean class="cn.edu.swun.bnb.libs.service.impl.MajorServiceImpl" autowire="byType" />
+    <bean class="cn.edu.swun.bnb.libs.service.impl.HeadPicServiceImpl" autowire="byType" />
+    <bean class="cn.edu.swun.bnb.libs.service.impl.BookServiceImpl" autowire="byType" />
+    
+    
+    
+    <!--DAO-->
+    <bean class="cn.edu.swun.bnb.libs.dao.impl.BookDAOImpl" autowire="byName" />
+    <bean class="cn.edu.swun.bnb.libs.dao.impl.BorrowDAOImpl" autowire="byName"/>
+    <bean class="cn.edu.swun.bnb.libs.dao.impl.UserDAOImpl" autowire="byName"/>
+    <bean class="cn.edu.swun.bnb.libs.dao.impl.StudentDAOImpl" autowire="byName" />
+    <bean class="cn.edu.swun.bnb.libs.dao.impl.InsDAOImpl" autowire="byName" />
+    <bean class="cn.edu.swun.bnb.libs.dao.impl.MajorDAOImpl" autowire="byName" />
+    <bean class="cn.edu.swun.bnb.libs.dao.impl.HeadpicDAOImpl" autowire="byName" />
+    
+    
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+        
+        
+        
+        
+</beans>

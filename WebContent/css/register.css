@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+br{
+	margin: 30px;
+}
+.userpic{
+	max-width: 100%;
+	height: auto;
+	border-style:groove;
+}
+.content{
+	margin-top: 68px;
+	padding: 20px;
+	border-radius: 18px;
+	border-style:groove;
+}
+.modal-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    max-width: 700px;
+    width:16%;
+    max-height: 600px;
+    margin: 100px auto;
+    border-radius:10px;
+    background-color:#fff;
+    -webkit-animation: zoom 0.6s;
+    animation: zoom 0.6s;
+    resize: both;
+    overflow: auto;
+}
+@-webkit-keyframes zoom{
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+@keyframes zoom{
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}

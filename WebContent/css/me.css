@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+h3{
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	font-size: 20px;
+}
+p{
+	font-size: 26px;
+	margin-bottom: 0px;
+}
+.allbox{
+	padding: 6px;
+}
+.usephoto{
+	border-radius: 100px;
+	width: 116px;
+	height: 116px;
+}
+.box{
+	height: 200px;
+	border-style:ridge;
+	border-radius: 18px;
+	margin: 16px;
+	padding: 16px;	
+}
+.boxtwo{
+	text-align: center;
+	height: 136px;
+	margin: 0px;
+	border-bottom-left-radius: 36px;
+	padding: 16px;
+	border-style:outset;
+}
+h4{
+    margin-left: 20px;
+}
+.userpic{
+	max-width: 100%;
+	height: auto;
+}
+.modal-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    max-width: 700px;
+    max-height: 600px;
+    margin: 100px auto;
+    border-radius:10px;
+    background-color:#fff;
+    -webkit-animation: zoom 0.6s;
+    animation: zoom 0.6s;
+    resize: both;
+    overflow: auto;
+}
+@-webkit-keyframes zoom{
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+@keyframes zoom{
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+#box1 li {
+  float:left;
+  padding:2px 1em;
+  margin-right:0.2em;
+  margin-top: 5px;
+  background-color:antiquewhite;
+  color:#337AB7;
+  border-radius:1em;
+}
+#box2 li {
+  float:left;
+  color: aliceblue;
+  padding:2px 1em;
+  margin-right:0.2em;
+  margin-top: 5px;
+  background-color:#EE7779;
+  border-radius:1em;
+}
+.number{
+	font-size: 68px;
+}
+#box3 li {
+  float:left;
+  color:#000000;
+  padding:2px 1em;
+  margin-right:0.2em;
+  margin-top: 5px;
+  background-color:#73FB93;
+  border-radius:1em;
+}
+.box ul {
+  margin: 0px;
+  padding: 0px;
+  list-style:none;
+  overflow:auto;
+}
